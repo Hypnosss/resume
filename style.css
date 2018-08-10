@@ -3,10 +3,13 @@
     display: block;
     clear: both;
 }
+h1,p,dd,dt{
+    margin: 0;
+}
 
 body{
     margin: 0;
-    background-color:#000;
+    background-color:rgba(0,0,0,0.2);
 }
 
 a{
@@ -14,41 +17,49 @@ a{
 }
 
 .topNavBar{
-    padding: 25px 16px 20px;
+    padding: 25px 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-.topNavBar > .logo{
+.topNavBar .topNavBarInner{
+    padding: 0 16px;
+}
+
+.topNavBar  .logo{
     float: left;
     font-size: 24px;
     font-family: 'Arial Black';
     padding: 1.2px 0;
 }
 
-.topNavBar > .logo > .rs{
+.topNavBar  .logo > .rs{
     color:#e6686a;
     margin: 0 4px 0 0;
 }
 
-.topNavBar > .logo > .card{
+.topNavBar  .logo > .card{
     color:#9a9da2;
 }
 
-.topNavBar > nav{
+.topNavBar  nav{
     float: right;
 }
 
-.topNavBar > nav > ul{
+.topNavBar  nav > ul{
     list-style: none;
     margin: 0;
     padding: 0; 
 }
 
-.topNavBar > nav > ul > li{
+.topNavBar  nav > ul > li{
     float:left;
     padding: 0 17px;
 }
 
-.topNavBar > nav > ul > li > a{
+.topNavBar  nav > ul > li > a{
     color: rgb(255,255,255,0.7);
     border-bottom: 5px solid transparent;
     border-top: 5px solid transparent;
@@ -58,12 +69,109 @@ a{
     font-size: 12px;
 }
 
-.topNavBar > nav > ul > li > a:hover{
-    border-bottom: 5px solid #999;
+.topNavBar  nav > ul > li > a:hover{
+    border-bottom: 5px solid #e6686a;
 }
 
-.test{
-    width:200px;
-    height:200px;
-    color:red;
+.banner{
+    background-image: url(./imgs/111.png);
+    background-size: cover;
+    background-position: center center;
+    height: 600px;
+}
+
+.banner .mask{
+    height: 600px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.myCard{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eeeeee;
+}
+
+.myCard .photoAndText{
+    padding: 50px;
+}
+.myCard .photoAndText .photo{
+    float: left;
+    margin-right: 50px;
+}
+.myCard .photoAndText .text{
+    float: left;
+    width: 490px;
+}
+
+.myCard .photoAndText .photo img{
+    width: 300px;
+    height: 300px;
+    alt:
+}
+
+.myCard .photoAndText .text .hello{
+    padding: 4px 16px;
+    background-color: #e6686a;
+    display: inline-block;
+    position: relative;
+}
+
+.myCard .photoAndText .text .triangle{
+    border: 10px solid transparent;
+    border-left-color: #e6686a;
+    border-top-width: 0;
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 100%;
+}
+
+.myCard .photoAndText .text h1{
+    margin-top: 18px;
+}
+
+.myCard .photoAndText .text hr{
+    border: none;
+    border-top: 2px solid #cccccc;
+    margin: 20px 0;
+}
+
+.myCard .photoAndText .text dd{
+    float: right;
+    width: 70%;
+    padding: 5px 0;
+}
+
+.myCard .photoAndText .text dt{
+    float: left;
+    width: 30%;
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+.myCard .mediaLinks{
+    background-color: #e6686a;
+}
+
+.myCard .mediaLinks{
+    text-align: center;
+}
+
+.myCard .mediaLinks a{
+    display: inline-block;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+}
+
+.myCard .mediaLinks a:hover{
+    background-color: #cf5d5f;
+}
+
+.myCard .mediaLinks .icon{
+    fill:white;
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
 }
