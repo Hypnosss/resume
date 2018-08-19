@@ -16,6 +16,9 @@
     </style>
 </head>
 <body>
+    <div id = "siteLoading" class = "siteWelcome active">
+        <div class="loading"></div>
+    </div>
     <div class = "topNavBar">
         <div class = "topNavBarInner  clearfix">
             <a class = "logo" href = "#">
@@ -162,6 +165,9 @@
             </div>
         </div>
     </div>
+    <script>
+        siteLoading.classList.remove("active");
+    </script>
     <script src = "https://at.alicdn.com/t/font_787642_b62p4hwew56.js"></script>
     <script src = "./main.js"></script>
 </body>
