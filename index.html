@@ -166,7 +166,11 @@
         </div>
     </div>
     <script>
-        siteLoading.classList.remove("active");
+        if (document.readyState == "complete") {
+            console.log("complete!!");
+            var mySiteLoading = document.getElementById('siteLoading');
+            mySiteLoading.classList.remove("active");
+    }
     </script>
     <script src = "https://at.alicdn.com/t/font_787642_b62p4hwew56.js"></script>
     <script src = "./main.js"></script>
