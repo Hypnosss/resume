@@ -35,14 +35,13 @@ a{
     align-items: center;
 }
 
-.siteWelcome:active{
-    display: block;
+.siteWelcome.active{
+    display: flex;
 }
 
 .loading{
     width: 200px;
     height: 200px;
-    border: 1px solid red;
     position: relative;
 }
 
