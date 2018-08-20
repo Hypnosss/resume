@@ -29,7 +29,7 @@ a{
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 2;
     background-color:#888;
     justify-content: center;
     align-items: center;
@@ -83,10 +83,21 @@ a{
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1;
+}
+
+.topNavBar.notOnTop{
+    background-color: #fff;
+    box-shadow: 2px 4px 13px 0 rgba(0,0,0,0.5);
+    transition: all 0.3s;
+}
+
+.topNavBar.notOnTop nav > ul > li  a{
+    color:#000;
 }
 
 .topNavBar .topNavBarInner{
-    padding: 0 16px;
+    padding: 0 35px 0 16px;
 }
 
 .topNavBar  .logo{
@@ -117,21 +128,71 @@ a{
 
 .topNavBar  nav > ul > li{
     float:left;
-    padding: 0 17px;
+    margin: 0 0 0 34px;
+    position: relative;
 }
 
-.topNavBar  nav > ul > li > a{
+.topNavBar  nav > ul > li a{
     color: rgb(255,255,255,0.7);
-    border-bottom: 5px solid transparent;
-    border-top: 5px solid transparent;
-    padding: 5px 0;
     display: block;
     font-weight: bold;
     font-size: 12px;
+    padding-top: 10px;
 }
 
-.topNavBar  nav > ul > li > a:hover{
-    border-bottom: 5px solid #e6686a;
+.topNavBar  nav > ul > li .submenu{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #3d4451;
+    right: 0;
+    box-shadow: 2px 4px 13px 0 rgba(0,0,0,0.5);
+}
+
+.topNavBar  nav > ul > li .submenu.active{
+    display: block;
+}
+
+.topNavBar  nav > ul > li .submenu li{
+    white-space: nowrap;
+    padding: 5px 10px;
+}
+
+.topNavBar  nav > ul > li .border{
+    width: 100%;
+    height: 5px;
+    margin-top: 5px;
+}
+
+.topNavBar  nav > ul > li a.active .border{
+    background-color: #e06567;
+}
+
+.topNavBar  nav > ul > li:hover a .border{
+    background-color: #e06567;
+    animation: 0.3s ltr;
+}
+
+@keyframes ltr{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 10;
+    }
+}
+
+.topNavBar  nav > ul > li:hover ul{
+    animation: 0.3s submenuSlide;
+}
+
+@keyframes submenuSlide{
+    0%{
+        margin-right: 100%; 
+    }
+    100%{
+        margin-right: 0%;  
+    }
 }
 
 .banner{

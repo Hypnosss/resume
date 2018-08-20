@@ -19,7 +19,7 @@
     <div id = "siteLoading" class = "siteWelcome active">
         <div class="loading"></div>
     </div>
-    <div class = "topNavBar">
+    <div date-x id = "topNavBar" class = "topNavBar">
         <div class = "topNavBarInner  clearfix">
             <a class = "logo" href = "#">
                 <span class = "rs">RS</span><span class = "card">card</span>
@@ -27,25 +27,30 @@
             <nav>
                 <ul class = "clearfix">
                     <li>
-                        <a href = "#">关于</a>
+                        <a href = "#myCard">关于<div class="border"></div></a>
                     </li>
                     <li>
-                        <a href = "#">技能</a>
+                        <a href = "#skills">技能<div class="border"></div></a>
+                    </li>
+                    <li class = "menuTriger">
+                        <a href = "#works">作品<div class="border"></div></a>
+                        <ul class = "submenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
                     </li>
                     <li>
-                        <a href = "#">作品</a>
+                        <a href = "#">博客<div class="border"></div></a>
                     </li>
                     <li>
-                        <a href = "#">博客</a>
+                        <a href = "#">日历<div class="border"></div></a>
                     </li>
                     <li>
-                        <a href = "#">日历</a>
+                        <a href = "#">联系方式<div class="border"></div></a>
                     </li>
                     <li>
-                        <a href = "#">联系方式</a>
-                    </li>
-                    <li>
-                        <a href = "#">其他</a>
+                        <a href = "#">其他<div class="border"></div></a>
                     </li>
                 </ul>
             </nav>
@@ -54,7 +59,7 @@
     <div class = "banner">
         <div class = "mask"></div>
     </div>
-    <div class = "myCard">
+    <div data-x class = "myCard" id = "myCard">
         <div class = "photoAndText clearfix">
             <div class = "photo">
                 <img src = "./imgs/preview.jpg">
@@ -102,7 +107,7 @@
         <br>
         自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍
     </p>
-    <div class = "skills">
+    <div data-x class = "skills" id = "skills">
         <h2>技能</h2>
         <ol class = "clearfix">
             <li>
@@ -143,7 +148,7 @@
             </li>
         </ol>
     </div>
-    <div class = "works">
+    <div data-x class = "works" id = "works">
         <h2>作品集</h2>
         <nav>
             <ol class = "clearfix">
@@ -168,7 +173,6 @@
     <script>
     document.onreadystatechange = function(){
         if (document.readyState == "complete") {
-            console.log("complete!!");
             var mySiteLoading = document.getElementById('siteLoading');
             mySiteLoading.classList.remove("active");
         }
