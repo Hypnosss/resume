@@ -32,7 +32,7 @@
                     <li>
                         <a href = "#skills">技能<div class="border"></div></a>
                     </li>
-                    <li class = "menuTriger">
+                    <li class = "menuTrigger">
                         <a href = "#works">作品<div class="border"></div></a>
                         <ul class = "submenu">
                             <li>作品1</li>
@@ -41,7 +41,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href = "#">博客<div class="border"></div></a>
+                        <a href = "#messages">留言<div class="border"></div></a>
                     </li>
                     <li>
                         <a href = "#">日历<div class="border"></div></a>
@@ -170,15 +170,32 @@
             </div>
         </div>
     </div>
+    <div data-x class = "messages" id = "messages">
+        <h2>留言</h2>
+        <div class = "messagesInner">   
+            <ol id = "messageList"></ol>
+            <form id = "postMessageForm">
+                <input type = "text" name = "content">
+                <input type = "submit" value = "提交">
+            </form>
+        </div>   
+    </div>
     <script>
     document.onreadystatechange = function(){
-        if (document.readyState == "complete") {
+        if (document.readyState === "complete") {
             var mySiteLoading = document.getElementById('siteLoading');
             mySiteLoading.classList.remove("active");
         }
     }
     </script>
+    <script src = "https://cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
     <script src = "https://at.alicdn.com/t/font_787642_b62p4hwew56.js"></script>
-    <script src = "./main.js"></script>
+    <script src = "./js/topNavBarChangeClass.js"></script>
+    <script src = "./js/navWorks.js"></script>
+    <script src = "./js/navToOthers.js"></script>
+    <script src = "./js/works.js"></script>
+    <script src = "./js/navLis.js"></script>
+    <script src = "./js/message.js"></script>
+
 </body>
 </html>
