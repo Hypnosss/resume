@@ -10,7 +10,8 @@ var query = new AV.Query("Message");
 query.find().then(function(messages) {
     for(index in messages){
         let li  = document.createElement("li");
-        li.innerText = messages[index].attributes.words
+        li.innerText = messages[index].attributes.name + ":" + messages[index].attributes.words
+        //console.log(li.innerText);
         messageList.appendChild(li);
         //console.log(messages[index].attributes.words);
     }
@@ -18,19 +19,22 @@ query.find().then(function(messages) {
 
 postMessageForm.addEventListener("submit",function(e){
     e.preventDefault();
-    var value = postMessageForm.querySelector("input[name = content]").value;
+    var content = postMessageForm.querySelector("input[name = content]").value;
+    var name = postMessageForm.querySelector("input[name = userName]").value;
     //console.log(value);
 
     var Message = AV.Object.extend('Message');
     var message = new Message();
     message.save({
-    words: value
+        name: name,
+        words: content
     }).then(function(object){
         console.log(object.attributes.words);
         let li  = document.createElement("li");
-        li.innerText = object.attributes.words;
+        li.innerText = object.attributes.name + ":" + object.attributes.words;
         messageList.appendChild(li);
         postMessageForm.querySelector("input[name = content]").value = "";
+        postMessageForm.querySelector("input[name = userName]").value = "";
     })
 
     
