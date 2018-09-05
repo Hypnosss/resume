@@ -11,7 +11,7 @@ window.addEventListener("scroll", function(){
     for(var i = 0;i < lis.length;i++){
         if(lis[i].nodeName == "LI")
             lis[i].childNodes[1].classList.remove("active");
-            //console.log(lis[i].childNodes[1]);
+
     }
     a.classList.add("active");
 })

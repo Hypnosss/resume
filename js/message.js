@@ -8,12 +8,10 @@ AV.init({
 
 var query = new AV.Query("Message");
 query.find().then(function(messages) {
-    for(index in messages){
+    for(let index in messages){
         let li  = document.createElement("li");
         li.innerText = messages[index].attributes.name + ":" + messages[index].attributes.words
-        //console.log(li.innerText);
         messageList.appendChild(li);
-        //console.log(messages[index].attributes.words);
     }
 });
 
@@ -21,7 +19,6 @@ postMessageForm.addEventListener("submit",function(e){
     e.preventDefault();
     var content = postMessageForm.querySelector("input[name = content]").value;
     var name = postMessageForm.querySelector("input[name = userName]").value;
-    //console.log(value);
 
     var Message = AV.Object.extend('Message');
     var message = new Message();
@@ -39,13 +36,3 @@ postMessageForm.addEventListener("submit",function(e){
 
     
 });
-
-/*
-var TestObject = AV.Object.extend('TestObject');
-var testObject = new TestObject();
-testObject.save({
-  words: 'Hello World!'
-}).then(function(object) {
-  alert('LeanCloud Rocks!');
-})
-*/

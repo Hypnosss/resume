@@ -4,7 +4,6 @@ for(var i = 0; i < aTags.length; i++){
         x.preventDefault();
         var href = x.currentTarget.getAttribute("href");
         var myTop = document.querySelector(href).offsetTop;
-        //console.log(top);
         window.scrollTo({
             top:myTop - 100,
             behavior: "smooth" 
