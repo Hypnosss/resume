@@ -25,7 +25,7 @@ postMessageForm.addEventListener("submit",function(e){
         nameWarning.classList.add("active");
         return;
     }else{
-        if(content === "" || name.replace(/ /g, "") === ""){
+        if(content === "" || content.replace(/ /g, "") === ""){
             contentWarning.classList.add("active");
             return;
         }
