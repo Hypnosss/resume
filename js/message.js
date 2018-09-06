@@ -7,12 +7,12 @@ AV.init({
 });
 
 var query = new AV.Query("Message");
+var myHTML = "";
 query.find().then(function(messages) {
     for(let index in messages){
-        let li  = document.createElement("li");
-        li.innerText = messages[index].attributes.name + ":" + messages[index].attributes.words
-        messageList.appendChild(li);
+        myHTML += "<li>" + messages[index].attributes.name + ":" + messages[index].attributes.words + "</li>";
     }
+    messageList.innerHTML = myHTML;
 });
 
 postMessageForm.addEventListener("submit",function(e){
