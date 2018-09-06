@@ -19,7 +19,17 @@ postMessageForm.addEventListener("submit",function(e){
     e.preventDefault();
     var content = postMessageForm.querySelector("input[name = content]").value;
     var name = postMessageForm.querySelector("input[name = userName]").value;
-
+    nameWarning.classList.remove("active");
+    contentWarning.classList.remove("active");
+    if(name === "" || name.replace(/ /g, "") === ""){
+        nameWarning.classList.add("active");
+        return;
+    }else{
+        if(content === "" || name.replace(/ /g, "") === ""){
+            contentWarning.classList.add("active");
+            return;
+        }
+    }
     var Message = AV.Object.extend('Message');
     var message = new Message();
     message.save({
@@ -32,7 +42,6 @@ postMessageForm.addEventListener("submit",function(e){
         messageList.appendChild(li);
         postMessageForm.querySelector("input[name = content]").value = "";
         postMessageForm.querySelector("input[name = userName]").value = "";
-    })
-
-    
+    })   
 });
+

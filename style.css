@@ -492,7 +492,7 @@ a{
 }
 
 .messages .messagesInner ol{
-    padding:42px 50px 4px;
+    padding: 42px 50px 4px;
     margin-top: 30px;
 }
 
@@ -502,5 +502,22 @@ a{
 }
 
 .messages .messagesInner form{
-    padding: 50px 0;
+    padding: 50px 0 0;
+}
+
+.messages .messagesInner .warning{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;    
+    color:#eee;
+    margin-left: -116px;
+}
+
+.messages .messagesInner .warning #contentWarning{
+    padding-left: 72px;
+}
+
+.messages .messagesInner .warning .active{
+    color: red;
+    transition: all 0.2s;
 }
